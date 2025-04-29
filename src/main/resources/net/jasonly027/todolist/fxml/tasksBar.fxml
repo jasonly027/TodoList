@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.shape.SVGPath?>
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="net.jasonly027.todolist.controllers.TasksBarController"
+      prefHeight="400.0" prefWidth="600.0">
+    <Button>
+        <graphic>
+            <SVGPath content="M12 4.5v15m7.5-7.5h-15" fill="transparent" stroke="black" strokeWidth="2.5"/>
+        </graphic>
+        <tooltip>
+            <Tooltip text="Create a new task"/>
+        </tooltip>
+    </Button>
+    <Button>
+        <graphic>
+            <SVGPath content="m4.5 12.75 6 6 9-13.5" fill="transparent" stroke="black" strokeWidth="2.5"/>
+        </graphic>
+        <tooltip>
+            <Tooltip text="Mark selected tasks done"/>
+        </tooltip>
+    </Button>
+    <Button>
+        <graphic>
+            <SVGPath content="M6 18 18 6M6 6l12 12" fill="transparent" stroke="black" strokeWidth="2.5"/>
+        </graphic>
+        <tooltip>
+            <Tooltip text="Delete selected tasks"/>
+        </tooltip>
+    </Button>
+</HBox>
