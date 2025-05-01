@@ -13,8 +13,8 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         stage.setTitle("TodoList");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hello-view.fxml"));
-        Scene scene = createSceneWithPercentageSize(fxmlLoader.load(), 0.7, 0.8);
+        FXMLLoader mainView = new FXMLLoader(getClass().getResource("/fxml/views/mainView.fxml"));
+        Scene scene = createSceneWithPercentageSize(mainView.load(), 0.7, 0.8);
         stage.setScene(scene);
 
         stage.show();

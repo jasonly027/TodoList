@@ -7,5 +7,6 @@ module net.jasonly.todolist {
     opens net.jasonly027.todolist to javafx.fxml;
     exports net.jasonly027.todolist;
     exports net.jasonly027.todolist.controllers;
+    opens net.jasonly027.todolist.components to javafx.fxml;
     opens net.jasonly027.todolist.controllers to javafx.fxml;
 }
