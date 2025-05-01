@@ -5,7 +5,8 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 
 public class SceneHelper {
-    public static Scene createSceneWithPercentageSize(Parent parent, double percentWidth, double percentHeight) {
+    public static Scene createSceneWithPercentageSize(Parent parent, double percentWidth,
+                                                      double percentHeight) {
         double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
         double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
 

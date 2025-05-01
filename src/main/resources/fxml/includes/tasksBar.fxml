@@ -10,7 +10,7 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="net.jasonly027.todolist.controllers.TasksBarController"
       alignment="CENTER"
-      spacing="25"
+      spacing="20"
       prefHeight="32">
     <HBox spacing="10">
         <Button maxHeight="Infinity">
