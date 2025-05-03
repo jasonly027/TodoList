@@ -6,14 +6,13 @@
 
 <?import net.jasonly027.todolist.components.ToggleCompleted?>
 
-<HBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="net.jasonly027.todolist.controllers.TasksBarController"
-      alignment="CENTER"
-      spacing="20"
-      prefHeight="32">
+<fx:root type="HBox" xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml"
+         alignment="CENTER"
+         spacing="20"
+         prefHeight="32">
     <HBox spacing="10">
-        <Button maxHeight="Infinity">
+        <Button onAction="#onAddButtonClick" maxHeight="Infinity">
             <graphic>
                 <SVGPath content="M12 4.5v15m7.5-7.5h-15" fill="transparent" stroke="black" strokeWidth="1.5"/>
             </graphic>
@@ -53,5 +52,5 @@
                     fill="transparent" stroke="black" strokeWidth="1.5"/>
         </graphic>
     </Button>
-    <ToggleCompleted onOpenEyeClick="#onOpenEyeClick" onClosedEyeClick="#onClosedEyeClick"/>
-</HBox>
+    <ToggleCompleted fx:id="toggleCompleted"/>
+</fx:root>

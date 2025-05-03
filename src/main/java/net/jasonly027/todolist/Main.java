@@ -2,11 +2,10 @@ package net.jasonly027.todolist;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.stage.Stage;
-import net.jasonly027.todolist.controllers.MainController;
-import net.jasonly027.todolist.models.TasksModel;
 
-import static net.jasonly027.todolist.util.SceneHelper.createSceneWithPercentageSize;
+import static net.jasonly027.todolist.util.Util.createSceneWithPercentageSize;
 
 import java.io.IOException;
 
@@ -15,10 +14,10 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         stage.setTitle("TodoList");
 
-        FXMLLoader mainView = new FXMLLoader(getClass().getResource("/fxml/views/mainView.fxml"));
-        mainView.<MainController>getController().initModel(new TasksModel());
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/views/Main.fxml"));
+        Parent root = loader.load();
 
-        stage.setScene(createSceneWithPercentageSize(mainView.load(), 0.7, 0.8));
+        stage.setScene(createSceneWithPercentageSize(root, 0.7, 0.8));
 
         stage.show();
     }
