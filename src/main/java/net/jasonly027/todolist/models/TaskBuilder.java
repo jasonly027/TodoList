@@ -4,9 +4,10 @@ import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class TaskBuilder {
-    private Long id;
+    private UUID id;
     private StringProperty name;
     private StringProperty description;
     private ObjectProperty<LocalDate> date;
@@ -14,7 +15,7 @@ public class TaskBuilder {
     private ListProperty<String> tags;
     private BooleanProperty isDone;
 
-    public TaskBuilder setId(long id) {
+    public TaskBuilder setId(UUID id) {
         this.id = id;
         return this;
     }
@@ -49,9 +50,10 @@ public class TaskBuilder {
         return this;
     }
 
+    // All setters must be called before this, except for id, or this will throw
     public Task build() {
-        if (id == null || name == null || description == null || date == null || priority == null || tags == null || isDone == null) {
-            throw new IllegalStateException("Not all setters were called before building");
+        if (name == null || description == null || date == null || priority == null || tags == null || isDone == null) {
+            throw new IllegalStateException("Not all required setters were called before building");
         }
         return new Task(id, name, description, date, priority, tags, isDone);
     }

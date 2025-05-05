@@ -3,20 +3,25 @@ package net.jasonly027.todolist.components;
 import javafx.beans.NamedArg;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import net.jasonly027.todolist.models.Priority;
 import net.jasonly027.todolist.models.Task;
 import net.jasonly027.todolist.models.TasksModel;
+import net.jasonly027.todolist.lib.ReinitializationException;
 
 import java.time.LocalDateTime;
+import java.util.function.Predicate;
 
-import static net.jasonly027.todolist.util.Util.initCustomComponent;
+import static net.jasonly027.todolist.lib.Util.initCustomComponent;
 
+// A table visualizing a TasksModel.
 public class TasksTable extends VBox {
     @FXML
     private TableView<Task> table;
@@ -30,18 +35,11 @@ public class TasksTable extends VBox {
     private TableColumn<Task, Priority> priorityCol;
     @FXML
     private TableColumn<Task, ObservableList<String>> tagsCol;
+    @FXML
+    private TableColumn<Task, Boolean> isDoneCol;
 
     private final StackPane stackPane;
-
     private TasksModel model;
-
-    public void initModel(TasksModel model) {
-        if (this.model != null) {
-            throw new IllegalStateException("Model was already initialized");
-        }
-        this.model = model;
-        table.setItems(model.getTasks());
-    }
 
     public TasksTable(@NamedArg("stackPane") StackPane stackPane) {
         this.stackPane = stackPane;
@@ -50,36 +48,68 @@ public class TasksTable extends VBox {
 
     @FXML
     private void initialize() {
+        setupTable();
+    }
+
+    public void init(TasksModel model) {
+        if (this.model != null) {
+            throw new ReinitializationException();
+        }
+        this.model = model;
+
+        table.setItems(this.model.getTasks());
+        setIsDoneVisibility(false);
+    }
+
+    private void setupTable() {
+        table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         setupColumnValues();
-        setupTableStyle();
+        setupColumnStyle();
 
         table.setRowFactory(table -> {
             TableRow<Task> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
-                if (row.isEmpty()) return;
-
-                stackPane.getChildren().add(new TaskDetails(stackPane));
+                if (event.getClickCount() < 2 || row.isEmpty()) return;
+                stackPane.getChildren().add(new TaskDetails(stackPane, model, row.getItem()));
             });
 
             return row;
         });
     }
 
-    // Define how each column gets its value from a Task
+    // Setups how each column gets its value from a Task
     private void setupColumnValues() {
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
         priorityCol.setCellValueFactory(new PropertyValueFactory<>("priority"));
         tagsCol.setCellValueFactory(new PropertyValueFactory<>("tags"));
+        isDoneCol.setCellValueFactory(new PropertyValueFactory<>("isDone"));
     }
 
-    private void setupTableStyle() {
+    // Setups the visual appearance of columns
+    private void setupColumnStyle() {
         table.getColumns().forEach(col -> {
             col.setReorderable(false);
+            col.setSortable(true);
             col.setMinWidth(30);
         });
-
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        isDoneCol.setCellFactory(cell -> new CheckBoxTableCell<>());
+    }
+
+    public ObservableList<Task> getSelected() {
+        return table.getSelectionModel().getSelectedItems();
+    }
+
+    private final Predicate<Task> incompleteTasksOnly = task -> !task.isDoneProperty().get();
+
+    public void setIsDoneVisibility(boolean visible) {
+        if (visible) {
+            model.removeFilter(incompleteTasksOnly);
+        } else {
+            model.addFilter(incompleteTasksOnly);
+        }
+        isDoneCol.setVisible(visible);
     }
 }

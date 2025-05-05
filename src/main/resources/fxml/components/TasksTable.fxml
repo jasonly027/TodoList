@@ -13,6 +13,7 @@
             <TableColumn fx:id="dateCol" text="Due Date"/>
             <TableColumn fx:id="priorityCol" text="Priority"/>
             <TableColumn fx:id="tagsCol" text="Tags"/>
+            <TableColumn fx:id="isDoneCol" text="Completed"/>
         </columns>
     </TableView>
 </fx:root>

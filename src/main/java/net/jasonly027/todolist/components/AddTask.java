@@ -8,11 +8,16 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import net.jasonly027.todolist.models.Priority;
+import net.jasonly027.todolist.models.Task;
+import net.jasonly027.todolist.models.TaskBuilder;
 import net.jasonly027.todolist.models.TasksModel;
 
-import static net.jasonly027.todolist.util.Util.initCustomComponent;
+import static net.jasonly027.todolist.lib.Util.*;
+import static net.jasonly027.todolist.lib.Util.initCustomComponent;
 
+// A modal containing a form for creating a new Task.
 public class AddTask extends VBox {
     @FXML
     private TextField taskName;
@@ -22,9 +27,12 @@ public class AddTask extends VBox {
     private ComboBox<Priority> taskPriority;
     @FXML
     private TextArea taskDescription;
+    @FXML
+    private TextField taskTags;
+    @FXML
+    private Text errorText;
 
     private final StackPane stackPane;
-
     private final TasksModel model;
 
     public AddTask(@NamedArg("stackPane") StackPane stackPane,
@@ -51,5 +59,30 @@ public class AddTask extends VBox {
 
     @FXML
     private void onCreateTaskClick() {
+        if (!validateForm()) {
+            errorText.setText("Name required for new task");
+            return;
+        }
+
+        Task task = createTaskFromFields();
+        model.add(task);
+
+        onCloseClick();
     }
+
+    private boolean validateForm() {
+        return !taskName.getText().isBlank();
+    }
+
+    private Task createTaskFromFields() {
+        return new TaskBuilder()
+                .setName(taskName.getText())
+                .setDescription(taskDescription.getText())
+                .setDate(taskDate.getValue())
+                .setPriority(taskPriority.getValue())
+                .setTags(processTaskTags(taskTags.getText()))
+                .setIsDone(false)
+                .build();
+    }
+
 }

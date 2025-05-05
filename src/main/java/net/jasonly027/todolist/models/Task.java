@@ -6,9 +6,10 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class Task {
-    public final long id;
+    private final UUID id;
     private final StringProperty name;
     private final StringProperty description;
     private final ObjectProperty<LocalDate> date;
@@ -16,16 +17,21 @@ public class Task {
     private final ListProperty<String> tags;
     private final BooleanProperty isDone;
 
-    public Task(long id, StringProperty name, StringProperty description,
+    // If id is not known yet, null should be passed.
+    public Task(UUID id, StringProperty name, StringProperty description,
                 ObjectProperty<LocalDate> date, ObjectProperty<Priority> priority,
                 ListProperty<String> tags, BooleanProperty isDone) {
-        this.id = id;
+        this.id = id != null ? id : UUID.randomUUID();
         this.name = name;
         this.description = description;
         this.date = date;
         this.priority = priority;
         this.tags = tags;
         this.isDone = isDone;
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public StringProperty nameProperty() {

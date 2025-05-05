@@ -5,22 +5,18 @@ import javafx.scene.control.Button;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
 import net.jasonly027.todolist.models.TasksModel;
+import net.jasonly027.todolist.lib.ReinitializationException;
 
-public class ToggleCompleted extends Button {
+// A button that toggles visibility of the Done column of TasksTable.
+public class ShowCompleted extends Button {
     private boolean eyeIsOpen = false;
     private final SVGPath openEyeSvg = createOpenEye();
     private final SVGPath closedEyeSvg = createClosedEye();
 
     private TasksModel model;
+    private TasksTable tasksTable;
 
-    public void initModel(TasksModel model) {
-        if (this.model != null) {
-            throw new IllegalStateException("Model was already initialized");
-        }
-        this.model = model;
-    }
-
-    public ToggleCompleted() {
+    public ShowCompleted() {
         setText("Completed");
         setMaxHeight(Double.MAX_VALUE);
         setMinWidth(105);
@@ -30,22 +26,17 @@ public class ToggleCompleted extends Button {
     }
 
     private void toggleCompletedAction(ActionEvent actionEvent) {
-        if (eyeIsOpen) {
-            onOpenEyeClick(actionEvent);
-        } else {
-            onClosedEyeClick(actionEvent);
-        }
-
         eyeIsOpen = !eyeIsOpen;
+        tasksTable.setIsDoneVisibility(eyeIsOpen);
         setGraphic(eyeIsOpen ? openEyeSvg : closedEyeSvg);
     }
 
-    private void onOpenEyeClick(ActionEvent actionEvent) {
-
-    }
-
-    private void onClosedEyeClick(ActionEvent actionEvent) {
-
+    public void init(TasksModel model, TasksTable tasksTable) {
+        if (this.model != null || this.tasksTable != null) {
+            throw new ReinitializationException();
+        }
+        this.model = model;
+        this.tasksTable = tasksTable;
     }
 
     private static SVGPath createOpenEye() {

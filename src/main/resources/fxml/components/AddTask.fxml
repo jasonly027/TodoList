@@ -35,13 +35,14 @@
         <Text text="New Task"/>
         <TextField fx:id="taskName" promptText="Task Name"/>
         <HBox spacing="10">
-            <DatePicker fx:id="taskDate" promptText="Due Date" />
+            <DatePicker fx:id="taskDate" promptText="Due Date"/>
             <ComboBox fx:id="taskPriority"/>
-            <TextField promptText="Tags"/>
+            <TextField fx:id="taskTags" promptText="Tags"/>
         </HBox>
         <TextArea fx:id="taskDescription" promptText="Description"/>
         <HBox>
             <Button onAction="#onCreateTaskClick" text="Create"/>
+            <Text fx:id="errorText"/>
         </HBox>
     </VBox>
 </fx:root>

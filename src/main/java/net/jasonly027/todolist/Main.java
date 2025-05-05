@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 
-import static net.jasonly027.todolist.util.Util.createSceneWithPercentageSize;
+import static net.jasonly027.todolist.lib.Util.createSceneWithPercentageSize;
 
 import java.io.IOException;
 
@@ -24,5 +24,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch();
+//        new Database();
+//        System.out.println("Database created");
     }
 }
