@@ -3,11 +3,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.StackPane?>
 
-<?import net.jasonly027.todolist.components.*?>
+<?import net.jasonly.todolist.components.*?>
 
 <StackPane xmlns:fx="http://javafx.com/fxml"
            fx:id="stackPane"
-           fx:controller="net.jasonly027.todolist.controllers.MainController"
+           fx:controller="net.jasonly.todolist.controllers.MainController"
             stylesheets="@/css/style.css, @/css/Main.css">
     <VBox styleClass="mainVBox">
         <TasksBar fx:id="tasksBar" stackPane="$stackPane"/>

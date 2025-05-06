@@ -1,4 +1,4 @@
-package net.jasonly027.todolist.components;
+package net.jasonly.todolist.components;
 
 import javafx.beans.NamedArg;
 import javafx.collections.ObservableList;
@@ -8,16 +8,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
-import net.jasonly027.todolist.models.Task;
-import net.jasonly027.todolist.models.TasksModel;
-import net.jasonly027.todolist.lib.ReinitializationException;
+import net.jasonly.todolist.models.Task;
+import net.jasonly.todolist.models.TasksModel;
+import net.jasonly.todolist.lib.ReinitializationException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-import static net.jasonly027.todolist.lib.Util.initCustomComponent;
+import static net.jasonly.todolist.lib.Util.initCustomComponent;
 
 // A horizontal bar that contains interactive components
 // for creating, modifying, and filtering Tasks.

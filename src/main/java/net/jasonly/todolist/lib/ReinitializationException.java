@@ -1,4 +1,4 @@
-package net.jasonly027.todolist.lib;
+package net.jasonly.todolist.lib;
 
 public class ReinitializationException extends IllegalStateException {
     public ReinitializationException() {

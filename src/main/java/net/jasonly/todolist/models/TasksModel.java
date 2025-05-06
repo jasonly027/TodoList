@@ -1,11 +1,11 @@
-package net.jasonly027.todolist.models;
+package net.jasonly.todolist.models;
 
 import javafx.beans.property.ReadOnlyProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import net.jasonly027.todolist.lib.Database;
+import net.jasonly.todolist.lib.Database;
 
 import java.util.*;
 import java.util.function.Predicate;

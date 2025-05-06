@@ -1,4 +1,4 @@
-package net.jasonly027.todolist.components;
+package net.jasonly.todolist.components;
 
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
@@ -6,8 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
-import net.jasonly027.todolist.models.Task;
-import net.jasonly027.todolist.lib.ReinitializationException;
+import net.jasonly.todolist.models.Task;
+import net.jasonly.todolist.lib.ReinitializationException;
 
 // A button that toggles the done status of a Task.
 public class ToggleDone extends Button {

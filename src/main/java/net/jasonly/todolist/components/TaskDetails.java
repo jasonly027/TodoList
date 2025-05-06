@@ -1,4 +1,4 @@
-package net.jasonly027.todolist.components;
+package net.jasonly.todolist.components;
 
 import javafx.beans.NamedArg;
 import javafx.beans.binding.Bindings;
@@ -9,12 +9,12 @@ import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.util.StringConverter;
-import net.jasonly027.todolist.models.Priority;
-import net.jasonly027.todolist.models.Task;
-import net.jasonly027.todolist.models.TasksModel;
+import net.jasonly.todolist.models.Priority;
+import net.jasonly.todolist.models.Task;
+import net.jasonly.todolist.models.TasksModel;
 
-import static net.jasonly027.todolist.lib.Util.initCustomComponent;
-import static net.jasonly027.todolist.lib.Util.processTaskTags;
+import static net.jasonly.todolist.lib.Util.initCustomComponent;
+import static net.jasonly.todolist.lib.Util.processTaskTags;
 
 // A modal that contains editable information
 // on a preexisting Task.

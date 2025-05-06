@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.SVGPath?>
 
-<?import net.jasonly027.todolist.components.ShowCompleted?>
+<?import net.jasonly.todolist.components.ShowCompleted?>
 
 <fx:root type="HBox" xmlns="http://javafx.com/javafx"
          xmlns:fx="http://javafx.com/fxml"

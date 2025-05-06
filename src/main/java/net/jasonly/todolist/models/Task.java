@@ -1,4 +1,4 @@
-package net.jasonly027.todolist.models;
+package net.jasonly.todolist.models;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ListProperty;

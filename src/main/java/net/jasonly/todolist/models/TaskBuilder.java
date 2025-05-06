@@ -1,4 +1,4 @@
-package net.jasonly027.todolist.models;
+package net.jasonly.todolist.models;
 
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;

@@ -6,7 +6,7 @@ plugins {
     id 'org.beryx.jlink' version '2.25.0'
 }
 
-group 'net.jasonly027'
+group 'net.jasonly'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -25,8 +25,8 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-    mainModule = 'net.jasonly027.todolist'
-    mainClass = 'net.jasonly027.todolist.HelloApplication'
+    mainModule = 'net.jasonly.todolist'
+    mainClass = 'net.jasonly.todolist.HelloApplication'
 }
 
 javafx {

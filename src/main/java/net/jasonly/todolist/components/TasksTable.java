@@ -1,4 +1,4 @@
-package net.jasonly027.todolist.components;
+package net.jasonly.todolist.components;
 
 import javafx.beans.NamedArg;
 import javafx.collections.ObservableList;
@@ -11,15 +11,15 @@ import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import net.jasonly027.todolist.models.Priority;
-import net.jasonly027.todolist.models.Task;
-import net.jasonly027.todolist.models.TasksModel;
-import net.jasonly027.todolist.lib.ReinitializationException;
+import net.jasonly.todolist.models.Priority;
+import net.jasonly.todolist.models.Task;
+import net.jasonly.todolist.models.TasksModel;
+import net.jasonly.todolist.lib.ReinitializationException;
 
 import java.time.LocalDateTime;
 import java.util.function.Predicate;
 
-import static net.jasonly027.todolist.lib.Util.initCustomComponent;
+import static net.jasonly.todolist.lib.Util.initCustomComponent;
 
 // A table visualizing a TasksModel.
 public class TasksTable extends VBox {

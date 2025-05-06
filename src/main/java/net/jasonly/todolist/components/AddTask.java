@@ -1,4 +1,4 @@
-package net.jasonly027.todolist.components;
+package net.jasonly.todolist.components;
 
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
@@ -9,13 +9,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import net.jasonly027.todolist.models.Priority;
-import net.jasonly027.todolist.models.Task;
-import net.jasonly027.todolist.models.TaskBuilder;
-import net.jasonly027.todolist.models.TasksModel;
+import net.jasonly.todolist.models.Priority;
+import net.jasonly.todolist.models.Task;
+import net.jasonly.todolist.models.TaskBuilder;
+import net.jasonly.todolist.models.TasksModel;
 
-import static net.jasonly027.todolist.lib.Util.*;
-import static net.jasonly027.todolist.lib.Util.initCustomComponent;
+import static net.jasonly.todolist.lib.Util.*;
+import static net.jasonly.todolist.lib.Util.initCustomComponent;
 
 // A modal containing a form for creating a new Task.
 public class AddTask extends VBox {

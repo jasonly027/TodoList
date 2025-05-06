@@ -1,11 +1,11 @@
-package net.jasonly027.todolist;
+package net.jasonly.todolist;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 
-import static net.jasonly027.todolist.lib.Util.createSceneWithPercentageSize;
+import static net.jasonly.todolist.lib.Util.createSceneWithPercentageSize;
 
 import java.io.IOException;
 

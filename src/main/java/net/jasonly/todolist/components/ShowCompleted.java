@@ -1,11 +1,11 @@
-package net.jasonly027.todolist.components;
+package net.jasonly.todolist.components;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
-import net.jasonly027.todolist.models.TasksModel;
-import net.jasonly027.todolist.lib.ReinitializationException;
+import net.jasonly.todolist.models.TasksModel;
+import net.jasonly.todolist.lib.ReinitializationException;
 
 // A button that toggles visibility of the Done column of TasksTable.
 public class ShowCompleted extends Button {

@@ -1,8 +1,8 @@
-package net.jasonly027.todolist.lib;
+package net.jasonly.todolist.lib;
 
-import net.jasonly027.todolist.models.Priority;
-import net.jasonly027.todolist.models.Task;
-import net.jasonly027.todolist.models.TaskBuilder;
+import net.jasonly.todolist.models.Priority;
+import net.jasonly.todolist.models.Task;
+import net.jasonly.todolist.models.TaskBuilder;
 
 import java.sql.*;
 import java.time.LocalDate;

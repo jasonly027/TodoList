@@ -1,11 +1,11 @@
-package net.jasonly027.todolist.controllers;
+package net.jasonly.todolist.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.StackPane;
-import net.jasonly027.todolist.components.TasksBar;
-import net.jasonly027.todolist.components.TasksTable;
-import net.jasonly027.todolist.lib.Database;
-import net.jasonly027.todolist.models.TasksModel;
+import net.jasonly.todolist.components.TasksBar;
+import net.jasonly.todolist.components.TasksTable;
+import net.jasonly.todolist.lib.Database;
+import net.jasonly.todolist.models.TasksModel;
 
 public class MainController {
     @FXML
