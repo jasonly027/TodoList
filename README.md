@@ -13,6 +13,7 @@
 ![Tasks List](.github/assets/new_task.png)
 
 <h2 id="features">Features</h2>
+
 - Trackable task information
   - Name
   - Description
