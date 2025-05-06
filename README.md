@@ -8,6 +8,7 @@
 </h4>
 
 <h2 id="preview">Preview</h2>
+
 ![Tasks List](.github/assets/tasks.png)
 ![Tasks List](.github/assets/new_task.png)
 
