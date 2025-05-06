@@ -1,0 +1,5 @@
+.mainVBox {
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}

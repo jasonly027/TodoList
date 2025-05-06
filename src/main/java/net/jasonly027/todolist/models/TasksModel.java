@@ -1,15 +1,13 @@
 package net.jasonly027.todolist.models;
 
+import javafx.beans.property.ReadOnlyProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import net.jasonly027.todolist.lib.Database;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.function.Predicate;
 
 // A model containing Tasks.
@@ -68,5 +66,9 @@ public class TasksModel {
         Predicate<Task> combined = filters.stream()
                 .reduce(task -> true, Predicate::and);
         filteredTasks.setPredicate(combined);
+    }
+
+    public void setSortComparator(ReadOnlyProperty<Comparator<Task>> comparator) {
+        sortedTasks.comparatorProperty().bind(comparator);
     }
 }

@@ -1,0 +1,46 @@
+.tasksBarRoot {
+    -fx-prefHeight: 32;
+    -fx-spacing: 20;
+    -fx-fill-height: true;
+}
+
+.tasksBarTaskEditButtons {
+    -fx-spacing: 10;
+}
+.tasksBarTaskEditButtons > Button {
+    -fx-max-height: infinity;
+}
+
+.tasksBarMarkCompleteButton {
+    -fx-background-color: celadon;
+}
+.tasksBarMarkCompleteButton:hover {
+    -fx-background-color: darkCeladon;
+}
+.tasksBarMarkCompleteButton:focused {
+    -fx-border-color: darkCeladon;
+}
+
+.tasksBarMarkIncompleteButton {
+    -fx-background-color: tea;
+}
+.tasksBarMarkIncompleteButton:hover {
+    -fx-background-color: darkTea;
+}
+.tasksBarMarkIncompleteButton:focused {
+    -fx-border-color: darkTea;
+}
+
+.tasksBarSearchField {
+    -fx-max-height: infinity;
+    -fx-background-radius: 2 0 0 2;
+}
+
+.tasksBarSearchButton {
+    -fx-max-height: infinity;
+    -fx-background-radius: 0 2 2 0;
+}
+
+.filterButton {
+    -fx-max-height: infinity;
+}

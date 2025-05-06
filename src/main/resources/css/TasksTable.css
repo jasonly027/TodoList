@@ -1,0 +1,29 @@
+.table-view {
+    -fx-max-height: infinity;
+    -fx-background-radius: 2;
+}
+
+.table-column {
+    -fx-text-fill: black;
+    -fx-alignment: center-left;
+}
+
+.column-header {
+    -fx-background-color: darkpurple;
+    -fx-pref-height: 32;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-cell-size: 30;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #E6E6E6;
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: lightpurple;
+    -fx-font-weight: bold;
+    -fx-table-cell-border-color: gray;
+}

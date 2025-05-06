@@ -2,47 +2,32 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.text.Text?>
-<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.shape.SVGPath?>
 <fx:root type="VBox" xmlns="http://javafx.com/javafx"
          xmlns:fx="http://javafx.com/fxml"
-         alignment="CENTER"
-         fillWidth="false">
-    <background>
-        <Background>
-            <fills>
-                <BackgroundFill fill="gray"/>
-            </fills>
-        </Background>
-    </background>
-
-    <VBox alignment="CENTER" spacing="10">
-        <background>
-            <Background>
-                <fills>
-                    <BackgroundFill fill="aquamarine"/>
-                </fills>
-            </Background>
-        </background>
-        <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-        </padding>
-
-        <HBox alignment="TOP_RIGHT">
-            <Button onAction="#onCloseClick" text="X"/>
-        </HBox>
-        <Text text="New Task"/>
+         styleClass="addTaskRoot"
+         stylesheets="@/css/AddTask.css">
+    <VBox styleClass="addTaskModal">
+        <StackPane>
+            <Text text="New Task" StackPane.alignment="CENTER" styleClass="addTaskTitle"/>
+            <Button onAction="#onCloseClick" StackPane.alignment="CENTER_RIGHT" styleClass="addTaskCloseButton">
+                <graphic>
+                    <SVGPath content="M6 18 18 6M6 6l12 12" fill="transparent" stroke="black" strokeWidth="1.5"/>
+                </graphic>
+            </Button>
+        </StackPane>
         <TextField fx:id="taskName" promptText="Task Name"/>
         <HBox spacing="10">
             <DatePicker fx:id="taskDate" promptText="Due Date"/>
             <ComboBox fx:id="taskPriority"/>
-            <TextField fx:id="taskTags" promptText="Tags"/>
+            <TextField fx:id="taskTags" promptText="Tags" HBox.hgrow="ALWAYS"/>
         </HBox>
         <TextArea fx:id="taskDescription" promptText="Description"/>
-        <HBox>
+        <HBox styleClass="addTaskFooter">
             <Button onAction="#onCreateTaskClick" text="Create"/>
-            <Text fx:id="errorText"/>
+            <Text fx:id="errorText" styleClass="addTaskErrorText" fill="red"/>
         </HBox>
     </VBox>
 </fx:root>

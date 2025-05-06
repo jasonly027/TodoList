@@ -1,0 +1,43 @@
+.root {
+    lightpurple: #CFBFF7;
+    darkpurple: #B5A4E1;
+    celadon: #98C9A3;
+    darkCeladon: #8BB895;
+    tea: #C7D8B4;
+    darkTea: #AFC298;
+
+    -fx-accent: lightpurple;
+    -fx-font-size: 14;
+}
+
+.button {
+    -fx-background-color: lightpurple;
+    -fx-background-radius: 2;
+    -fx-padding: 6 10;
+    -fx-cursor: hand;
+    -fx-pref-height: 32;
+}
+
+.button:hover {
+    -fx-background-color: darkpurple;
+}
+
+.button:focused {
+    -fx-border-color: darkpurple;
+    -fx-border-width: 2;
+    -fx-border-insets: -2;
+}
+
+.text-field:focused {
+    -fx-background-color : lightpurple, white;
+    -fx-background-insets: 0, 2;
+}
+
+.text-area:focused {
+    -fx-background-color : lightpurple, white;
+    -fx-background-insets: 0, 2;
+}
+
+.combo-box:focused {
+    -fx-background-color : lightpurple, white;
+}

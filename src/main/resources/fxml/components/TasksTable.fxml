@@ -5,8 +5,9 @@
 
 <fx:root type="VBox" xmlns="http://javafx.com/javafx"
          xmlns:fx="http://javafx.com/fxml"
+         stylesheets="@/css/TasksTable.css"
 >
-    <TableView fx:id="table" VBox.vgrow="ALWAYS" maxHeight="Infinity">
+    <TableView fx:id="table" VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="nameCol" text="Name"/>
             <TableColumn fx:id="descriptionCol" text="Description"/>

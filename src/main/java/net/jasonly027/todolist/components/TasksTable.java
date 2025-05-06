@@ -57,6 +57,7 @@ public class TasksTable extends VBox {
         }
         this.model = model;
 
+        this.model.setSortComparator(table.comparatorProperty());
         table.setItems(this.model.getTasks());
         setIsDoneVisibility(false);
     }
