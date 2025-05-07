@@ -26,7 +26,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'net.jasonly.todolist'
-    mainClass = 'net.jasonly.todolist.HelloApplication'
+    mainClass = 'net.jasonly.todolist.Main'
 }
 
 javafx {

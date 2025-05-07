@@ -24,7 +24,5 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch();
-//        new Database();
-//        System.out.println("Database created");
     }
 }
